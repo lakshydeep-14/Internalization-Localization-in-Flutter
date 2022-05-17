@@ -1,16 +1,5 @@
-# localization
+# Internationalization And Localization In Flutter
 
-A new Flutter project.
+Internationalization and Localization mean to change your Flutter app to another locale or language. By default it have English (en) locale. But in other scenario you may need to change the app language so that diverse user can understand the app language and can easily use your Flutter app. Flutter have 78 locale so far.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Example](https://github.com/Internalization-Localization-in-Flutter/ex.gif)
