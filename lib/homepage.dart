@@ -9,7 +9,7 @@ import 'package:localization/controller.dart';
 import 'language.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -22,10 +22,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Flutter " +
-              AppLocalization.of(context)
-                  .getTranslatedValue("home_appBar_title")
-                  .toString(),
+          "Flutter ${AppLocalization.of(context)
+                  .getTranslatedValue("home_appBar_title")}",
           maxLines: 3,
         ),
         centerTitle: true,
@@ -41,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                     Get.find<LocaleCont>()
                         .updateLocale(_changeLanguage(e, context));
                   },
-                  child: Text("${e.name} ${e.flag}"),
+                  child: Text('${e.name} ${e.flag}'),
                 ),
               ),
             )
@@ -54,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Spacer(),
           Text(
-            AppLocalization.of(context).getTranslatedValue("demo").toString(),
+            AppLocalization.of(context).getTranslatedValue('demo').toString(),
             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
             textAlign: TextAlign.center,
             maxLines: 3,
@@ -68,12 +66,12 @@ class _HomePageState extends State<HomePage> {
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("asset/book.jpg"),
+                    image: AssetImage('asset/book.jpg'),
                     fit: BoxFit.fitHeight)),
           ),
           Text(
             AppLocalization.of(context)
-                .getTranslatedValue("bookname")
+                .getTranslatedValue('bookname')
                 .toString(),
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 21),
             textAlign: TextAlign.center,
@@ -83,7 +81,7 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           Text(
-            AppLocalization.of(context).getTranslatedValue("author").toString(),
+            AppLocalization.of(context).getTranslatedValue('author').toString(),
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
             textAlign: TextAlign.center,
             maxLines: 3,
@@ -95,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 duration: Duration(seconds: 1),
                 content: Text(
                   AppLocalization.of(context)
-                      .getTranslatedValue("link")
+                      .getTranslatedValue('link')
                       .toString(),
                 ),
               );
@@ -106,7 +104,7 @@ class _HomePageState extends State<HomePage> {
               });
             },
             child: Text(AppLocalization.of(context)
-                .getTranslatedValue("buy")
+                .getTranslatedValue('buy')
                 .toString()),
           ),
           Spacer(),
@@ -116,28 +114,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   Locale _changeLanguage(Language language, context) {
-    Locale _a;
+    Locale a;
     switch (language.languageCode) {
       case ENGLISH: // here ENGLISH is a constant that I've created in another file called `constant.dart` file and same for other languages
-        _a = Locale(language.languageCode, "US");
+        a = Locale(language.languageCode, 'US');
 
         break;
       case NEPALI:
-        _a = Locale(language.languageCode, "NP");
+        a = Locale(language.languageCode, 'NP');
 
         break;
       case SPANISH:
-        _a = Locale(language.languageCode, 'AR');
+        a = Locale(language.languageCode, 'AR');
 
         break;
 
       default:
-        _a = Locale(language.languageCode, 'US');
+        a = Locale(language.languageCode, 'US');
     }
-    return _a;
+    return a;
   }
 }
 
-const String ENGLISH = "en";
-const String NEPALI = "ne";
-const String SPANISH = "es";
+const String ENGLISH = 'en';
+const String NEPALI = 'ne';
+const String SPANISH = 'es';
